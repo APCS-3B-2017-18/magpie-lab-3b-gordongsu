@@ -1,3 +1,5 @@
+package magpie2;
+
 /**
  * A program to carry on conversations with a human user.
  * This version: 
@@ -117,6 +119,18 @@ public class Magpie3
 
 		return -1;
 	}
+        
+        /**
+         * Code does nothing. The code is completely useless in of itself but useful for me 
+         * to learn how to write code and build APIs. 
+         * 
+         * @param dud 
+         *           the useless parameter
+         */
+        public void doNothing (int dud) 
+        { 
+            //does nothing            
+        }
 
 	/**
 	 * Search for one word in phrase. The search is not case
@@ -151,11 +165,11 @@ public class Magpie3
 
 		if (whichResponse == 0)
 		{
-			response = "Interesting, tell me more.";
+			response = "Interesting, tell me some more.";
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "Hmmmmm.";
 		}
 		else if (whichResponse == 2)
 		{
