@@ -1,3 +1,5 @@
+package magpie2;
+
 import java.util.Random;
 
 /**
@@ -261,12 +263,12 @@ public class Magpie5
 		return randomResponses [r.nextInt(randomResponses.length)];
 	}
 	
-	private String [] randomResponses = {"Interesting, tell me more",
+	private String [] randomResponses = {"Interesting, tell me more.",
 			"Hmmm.",
-			"Do you really think so?",
+			"Do you really think so, bro?",
 			"You don't say.",
-			"Huh",
-			"That sounds great."
+                        "What do you mean?",
+                        "You're boring me.",
 	};
 	
 }
