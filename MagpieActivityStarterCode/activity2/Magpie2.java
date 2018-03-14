@@ -1,16 +1,15 @@
-/**
- * A program to carry on conversations with a human user.
- * This is the initial version that:  
- * <ul><li>
- *       Uses indexOf to find strings
- * </li><li>
- * 		    Handles responding to simple words and phrases 
- * </li></ul>
- * This version uses a nested if to handle default responses.
- * @author Laurie White
- * @version April 2012
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-public class Magpie2
+package magpie2;
+
+/**
+ *
+ * @author gordon
+ */
+public class Magpie2 {
 {
 	/**
 	 * Get a default greeting 	
@@ -31,18 +30,38 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
+		if (statement.indexOf(" no ") >= 0)
 		{
 			response = "Why so negative?";
 		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (statement.indexOf(" mother ") >= 0
+				|| statement.indexOf(" father ") >= 0
+				|| statement.indexOf(" sister ") >= 0
+				|| statement.indexOf(" brother ") >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
-		else
+                else if (statement.indexOf(" dog ") >= 0 
+                                || statement.indexOf(" cat ") >=0 
+                                || statement.indexOf(" fish ") >=0 
+                                || statement.indexOf(" spider ") >=0 )
+                {
+                        response = "Tell me more about your pets.";                       
+                }
+                else if (statement.indexOf(" Mr. ") >=0)    
+                    response = "He sounds like a good teacher.";
+                else if (statement.indexOf(" Mrs. ") >=0)    
+                    response = "She sounds like a good teacher.";
+                else if (statement.trim().equals("")) 
+                    response = "Say something, please."; 
+                else if (statement.indexOf("What") >=0 || statement.indexOf("what") >=0)      
+                    response = "Why don't you tell me. I'm not that intellegent.";
+                else if (statement.indexOf("?") >=0 )
+                    response = "That is an interesting question.";
+                else if (statement.indexOf("dumb")>=0 || statement.indexOf("hell") >=0
+                          ||statement.indexOf("ass")>=0 || statement.indexOf("hate") >=0 )
+                    response = "I do not appreciate what you are saying.";
+                else 
 		{
 			response = getRandomResponse();
 		}
@@ -55,7 +74,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -75,6 +94,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+                else if (whichResponse == 4)
+		{
+			response = "I like cheese.";
+		}
+                else if (whichResponse == 5)
+		{
+			response = "Nah.";
 		}
 
 		return response;
